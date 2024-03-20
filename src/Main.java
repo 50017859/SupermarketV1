@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args){
+        Item i = new Item(115, "TAYTO CHEESE AND ONION 95G");
+        System.out.println(i.toString());
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Item i2 = new Item(200, "KITTY KIBBLE");
+        System.out.println(i2.toString());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Item i3 = new Item(250, "FANCY CHOCOLATE");
+        Item i4 = new Item(150, "FANCY BICCIES");
+        Item i5 = new Item(120, "LEMON PLEDGE 500ML");
+
+        Transaction t = new Transaction();
+        t.addItem(i);
+        t.addItem(i2);
+        t.addItem(i3);
+        t.addItem(i4);
+        t.addItem(i5);
+        System.out.println(t.getNumberOfItems());
+        System.out.println(t.getSubTotal());
+
+        t.removeLastItem();
+        System.out.println(t.getNumberOfItems());
+        System.out.println(t.getSubTotal());
+
+        //System.out.println(t.pay(1000));
+
+        t.recepit();
     }
 }
